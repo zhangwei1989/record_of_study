@@ -11,7 +11,8 @@ public class Test {
                 "a3", "b3", "c3", "d3", "e3", "f3", "g3");
 
         /** reduce */
-        String join = vals.parallelStream()
+        /** parallelStream */
+        /*String join = vals.parallelStream()
                 .peek(System.out::println)
                 .reduce("_",
                         (a, b) -> {
@@ -20,6 +21,17 @@ public class Test {
                         },
                         (a, b) -> {
                             System.out.println("combining " + a + " and " + b + " Thread: " + Thread.currentThread().getName());
+                            return a.concat(b);
+                        }
+                );
+        System.out.println(join);*/
+        
+        /** T reduce(T identity, BinaryOperator<T> accumulator) */
+        String join = vals.stream()
+                .peek(System.out::println)
+                .reduce("hello : ",
+                        (a, b) -> {
+                            System.out.println("reducing " + a + " and " + b + " Thread: " + Thread.currentThread().getName());
                             return a.concat(b);
                         }
                 );
