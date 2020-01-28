@@ -18,7 +18,7 @@ public class Test {
         }*/
         
         /** InputStream/OutputStream */
-        try(InputStream is = new FileInputStream("test1.txt");
+        /*try(InputStream is = new FileInputStream("test1.txt");
             OutputStream os = new FileOutputStream("output1.txt")) {
             byte[] buffer = new byte[10];
             int byteRead = 0;
@@ -28,6 +28,17 @@ public class Test {
                 os.write(buffer, 0, byteRead);
                 System.out.println("Read and written bytes " + byteRead);
             }
-        }
+        }*/
+
+        /** Reader/Writer */
+            /** write */
+        /*FileWriter fw = new FileWriter("text2.txt", true);
+        fw.write("hello world again");
+        fw.close();*/
+
+            /** append */
+        FileWriter fw = new FileWriter("text2.txt");
+        fw.append("hello world again");
+        fw.close();
     }
 }
