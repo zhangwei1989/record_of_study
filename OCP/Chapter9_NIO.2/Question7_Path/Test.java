@@ -16,7 +16,7 @@ public class Test {
         System.out.println(p1.resolve(p2));*/
 
         /** getName()/subPath() */
-        Path p1 = Paths.get("/root/home/second/test1.pdf");
+        /*Path p1 = Paths.get("/root/home/second/test1.pdf");
         System.out.println(p1.getRoot());
         System.out.println(p1.getName(0));
         System.out.println(p1.getName(1));
@@ -31,7 +31,7 @@ public class Test {
         System.out.println(p1.subpath(0,3));
 //        System.out.println(p1.subpath(0,5));
 //        System.out.println(p1.subpath(5,4));
-//        System.out.println(p1.subpath(-1,4));
+//        System.out.println(p1.subpath(-1,4));*/
 
 
         /** BufferedReader */
@@ -41,5 +41,7 @@ public class Test {
             System.out.println(e);
         }*/
 
+        boolean flag;
+        System.out.println(flag = true);
     }
 }
