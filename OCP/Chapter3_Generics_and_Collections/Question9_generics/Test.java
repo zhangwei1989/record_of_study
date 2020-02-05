@@ -30,6 +30,21 @@ class Person {
     }
 }
 
+/** generic class and method with same name */
+/*class Counter<T> {
+    T t;
+
+    public <T> int count(T[] ta, T t) {
+        this.t = t;
+        int count = 0;
+        for (T x: ta) {
+            count = x == t ? count + 1 : count;
+        }
+
+        return count;
+    }
+}*/
+
 public class Test {
 
     public void helpPeople(Queue people, Queue helped) {
