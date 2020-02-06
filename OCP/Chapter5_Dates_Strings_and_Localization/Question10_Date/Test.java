@@ -13,8 +13,12 @@ public class Test {
 
         /** DateTimeFormatter */
         LocalDate d = LocalDate.now();
-        Locale loc = new Locale("zh", "CN");
+        /*Locale loc = new Locale("zh", "CN");
         DateTimeFormatter df = DateTimeFormatter.ofPattern("dd, MMMM yyyy", loc);
-        System.out.println(df.format(d));
+        System.out.println(df.format(d));*/
+
+            /** with week */
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("eeee d'st day of ' MMMM yyyy");
+        System.out.println(dtf.format(d));
     }
 }

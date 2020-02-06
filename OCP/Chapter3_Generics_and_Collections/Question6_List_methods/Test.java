@@ -4,7 +4,7 @@ import java.util.function.*;
 public class Test {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {/*
         List<String> vals = new ArrayList<>();
         vals.add("a");
         vals.add("b");
@@ -13,7 +13,7 @@ public class Test {
         vals.add("e");
         vals.add("f");
 
-        System.out.println(vals);
+        System.out.println(vals);*/
 
         /** subList */
         /** subList 有改变后，原来的 list 也能看到变化 */
@@ -22,10 +22,20 @@ public class Test {
 //        System.out.println(vals.subList(0, 10));
 //        System.out.println(vals.subList(-1, 4));
 
-        Function<List<String>, List<String>> f = list -> list.subList(2, 4);
+        /*Function<List<String>, List<String>> f = list -> list.subList(2, 4);
         List<String> view = f.apply(vals);
         view.add("x");
         System.out.println(view);
-        System.out.println(vals);
+        System.out.println(vals);*/
+
+        /** type reference */
+        var data = new ArrayList<>();
+        data.add("A");
+        data.add(100);
+        data.add("C");
+        data.set(0, 200);
+        data.remove(2);
+        data.set(2, 101L);
+        System.out.println(data);
     }
 }

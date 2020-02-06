@@ -29,11 +29,16 @@ public class Test {
 
     public static void main(String[] args) {
         /** 没有实现 Comparable */
-        Test test = new Test();
+        /** TreeSet */
+        /*Test test = new Test();
         test.add(new Person("MATH"));
         System.out.println("A");
         test.add(new Person("MATH"));
         System.out.println("B");
-        System.out.println(test.treeSet);
+        System.out.println(test.treeSet);*/
+
+        /** List */
+        List<Person> people = Arrays.asList(new Person("a"), new Person("b"), new Person("c"));
+        Collections.sort(people);
     }
 }

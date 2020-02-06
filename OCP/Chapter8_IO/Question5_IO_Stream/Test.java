@@ -1,8 +1,14 @@
 import java.io.*;
 
+class Boo implements Serializable {
+    transient int ti = 10;
+    static int si = 20;
+    int a = 11;
+}
+
 public class Test {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         /** ./ 是多余的 */
 //        try(FileInputStream fis = new FileInputStream("./test1.txt");
@@ -37,8 +43,31 @@ public class Test {
         fw.close();*/
 
             /** append */
-        FileWriter fw = new FileWriter("text2.txt");
+        /*FileWriter fw = new FileWriter("text2.txt");
         fw.append("hello world again");
-        fw.close();
+        fw.close();*/
+
+        /** RandomAccessFile */
+        /*RandomAccessFile raf = new RandomAccessFile("text1.txt", "r");
+        System.out.println(raf.length());
+        raf.seek(raf.length());
+        raf.writeChars("Final Test");*/
+
+        /** serialize and deserialize */
+        Boo boo = new Boo();
+        boo.si++;
+        boo.a = 30;
+        System.out.println(boo.ti + " " + boo.si + " " + boo.a);
+        FileOutputStream fos = new FileOutputStream("text3.txt");
+        ObjectOutputStream os = new ObjectOutputStream(fos);
+        os.writeObject(boo);
+        os.close();
+
+        FileInputStream fis = new FileInputStream("text3.txt");
+        ObjectInputStream is = new ObjectInputStream(fis);
+        boo = (Boo) is.readObject();
+        System.out.println(boo.ti + " " + boo.si + " " + boo.a);
+        is.close();
+        System.out.println(boo.ti + " " + boo.si + " " + boo.a);
     }
 }
