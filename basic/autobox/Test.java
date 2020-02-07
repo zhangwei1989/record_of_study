@@ -8,5 +8,9 @@ public class Test {
         Integer i2 = 2;
         double d2 = i2;
         System.out.println(d2);
+
+        String str = "10";
+        int i3 = str;
+        System.out.println(i3);
     }
 }

@@ -38,7 +38,18 @@ public class Test {
         System.out.println(test.treeSet);*/
 
         /** List */
-        List<Person> people = Arrays.asList(new Person("a"), new Person("b"), new Person("c"));
-        Collections.sort(people);
+        /*List<Person> people = Arrays.asList(new Person("a"), new Person("b"), new Person("c"));
+        Collections.sort(people);*/
+
+        /** max */
+        System.out.println(Integer.max(3, 4));
+        System.out.println(Integer.compare(3, 9));
+        System.out.println(Integer.compare(9, 7));
+        List<Integer> ls = Arrays.asList(3, 4, 6, 9, 2, 5, 7);
+        System.out.println(ls.stream().reduce(Integer.MIN_VALUE, (a, b) -> a > b ? a : b));
+        System.out.println(ls.stream().max(Integer::max).get());
+        System.out.println(ls.stream().max(Integer::compare).get());
+        System.out.println(ls.stream().max((a, b) -> {
+            System.out.println("a: " + a + "b: " + b); return a > b ? a : b;}));
     }
 }
