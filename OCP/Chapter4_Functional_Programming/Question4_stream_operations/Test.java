@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.*;
 
 public class Test {
 
@@ -27,7 +28,7 @@ public class Test {
         System.out.println(join);*/
         
         /** T reduce(T identity, BinaryOperator<T> accumulator) */
-        String join = vals.stream()
+        /*String join = vals.stream()
                 .peek(System.out::println)
                 .reduce("hello : ",
                         (a, b) -> {
@@ -35,6 +36,16 @@ public class Test {
                             return a.concat(b);
                         }
                 );
-        System.out.println(join);
+        System.out.println(join);*/
+
+        /** Random */
+        Random r = new Random();
+        System.out.println(r.doubles());
+        r.doubles(10).forEach(System.out::println);
+
+        DoubleStream rDoubles = r.doubles().limit(10);
+        rDoubles.forEach(System.out::println);
+
+        DoubleStream.generate(r::nextDouble).limit(10).forEach(System.out::println);
     }
 }

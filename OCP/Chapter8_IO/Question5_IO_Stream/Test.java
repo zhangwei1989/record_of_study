@@ -54,7 +54,7 @@ public class Test {
         raf.writeChars("Final Test");*/
 
         /** serialize and deserialize */
-        Boo boo = new Boo();
+        /*Boo boo = new Boo();
         boo.si++;
         boo.a = 30;
         System.out.println(boo.ti + " " + boo.si + " " + boo.a);
@@ -68,6 +68,15 @@ public class Test {
         boo = (Boo) is.readObject();
         System.out.println(boo.ti + " " + boo.si + " " + boo.a);
         is.close();
-        System.out.println(boo.ti + " " + boo.si + " " + boo.a);
+        System.out.println(boo.ti + " " + boo.si + " " + boo.a);*/
+
+        /** File */
+        File f = new File("a/b/text.txt");
+        System.out.println(f.mkdir());
+
+        System.out.println(f.getParent().getClass());
+        System.out.println(f.getParentFile().getClass());
+
+        f.mkdirs();
     }
 }

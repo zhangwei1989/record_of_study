@@ -2,11 +2,12 @@ import java.util.*;
 import java.io.*;
 import java.nio.file.*;
 import java.nio.charset.*;
+import java.util.stream.*;
 
 public class Test {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
 //        Path p1 = Paths.get("test1.pdf");
         /** resolve */
@@ -41,7 +42,12 @@ public class Test {
             System.out.println(e);
         }*/
 
-        boolean flag;
-        System.out.println(flag = true);
+        /** Files */
+        Path p3 = Paths.get("text1.txt");
+        Stream<String> lines = Files.lines(p3);
+        lines.forEach(System.out::println);
+
+        List<String> line2s = Files.readAllLines(p3);
+        line2s.forEach(System.out::println);
     }
 }
