@@ -9,8 +9,12 @@ public class Test {
         double d2 = i2;
         System.out.println(d2);
 
-        String str = "10";
+        /*String str = "10";
         int i3 = str;
-        System.out.println(i3);
+        System.out.println(i3);*/
+
+        int i4 = 40;
+        String str1 = i4;
+        System.out.println(str1);
     }
 }

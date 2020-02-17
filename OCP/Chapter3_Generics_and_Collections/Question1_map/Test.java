@@ -8,14 +8,16 @@ public class Test {
     public static void main(String[] args) {
 
         /** with null key and value */
-        /*//        Map hm = new ConcurrentHashMap();
+        //        Map hm = new ConcurrentHashMap();
         Map hm = new HashMap();
         hm.put(null, "asdf");
         hm.put("asdf", null);
+        hm.put("self", hm);
+        hm.put(hm, "self");
 
         Object obj = hm.get(1);
         System.out.println(obj);
-        System.out.println(hm);*/
+        System.out.println(hm);
 
         /** pollLastEntry()/pollFirstEntry()/tailMap */
         /*NavigableMap<String, String> mymap = new TreeMap<String, String>();
@@ -83,7 +85,7 @@ public class Test {
         System.out.println(favorites);*/
         
         /** computeIfAbsent */
-        Function<String, Integer> mapper = (k) -> 1;
+        /*Function<String, Integer> mapper = (k) -> 1;
         Integer a = favorites.computeIfAbsent("a", mapper);
         System.out.println(a);
         System.out.println(favorites);
@@ -105,6 +107,6 @@ public class Test {
 
         Integer f = favorites.computeIfAbsent("f", mapper2);
         System.out.println(f);
-        System.out.println(favorites);
+        System.out.println(favorites);*/
     }
 }
