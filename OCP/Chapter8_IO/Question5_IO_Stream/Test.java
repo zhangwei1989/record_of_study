@@ -24,17 +24,28 @@ public class Test {
         }*/
         
         /** InputStream/OutputStream */
-        /*try(InputStream is = new FileInputStream("test1.txt");
-            OutputStream os = new FileOutputStream("output1.txt")) {
-            byte[] buffer = new byte[10];
-            int byteRead = 0;
-            while ((byteRead = is.read(buffer)) != -1) {
-                System.out.println(buffer);
-                System.out.println(byteRead);
-                os.write(buffer, 0, byteRead);
-                System.out.println("Read and written bytes " + byteRead);
-            }
-        }*/
+            /** DataInputStream/DataOutputStream */
+        try(InputStream is = new FileInputStream("output1.txt");
+            OutputStream os = new FileOutputStream("output1.txt");
+            DataInputStream dis = new DataInputStream(is);
+            DataOutputStream dos = new DataOutputStream(os);) {
+//            byte[] buffer = new byte[10];
+//            int byteRead = 0;
+//            while ((byteRead = is.read(buffer)) != -1) {
+//                System.out.println(buffer);
+//                System.out.println(byteRead);
+//                os.write(buffer, 0, byteRead);
+//                System.out.println("Read and written bytes " + byteRead);
+//            }
+            dos.writeUTF("hello");
+            dos.writeByte(100);
+
+            System.out.println(dis.readUTF());
+            System.out.println(dis.readByte());
+        } catch (FileNotFoundException | IOException e) {
+            System.out.println(e);
+        }
+
 
         /** Reader/Writer */
             /** write */
@@ -71,12 +82,21 @@ public class Test {
         System.out.println(boo.ti + " " + boo.si + " " + boo.a);*/
 
         /** File */
-        File f = new File("a/b/text.txt");
+        /** mkdir/mkdirs */
+        /*File f = new File("a/b/text.txt");
         System.out.println(f.mkdir());
 
         System.out.println(f.getParent().getClass());
         System.out.println(f.getParentFile().getClass());
 
-        f.mkdirs();
+        f.mkdirs();*/
+
+        /** PrintWriter */
+        /*try(OutputStream os = new FileOutputStream("output1.txt");
+            PrintWriter printWriter = new PrintWriter(os)) {
+//            printWriter.write(99);
+//            os.write(100);
+            printWriter.print(99);
+        }*/
     }
 }

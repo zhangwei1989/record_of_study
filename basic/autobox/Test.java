@@ -14,7 +14,11 @@ public class Test {
         System.out.println(i3);*/
 
         int i4 = 40;
-        String str1 = i4;
-        System.out.println(str1);
+//        String str1 = i4;
+//        System.out.println(str1);
+
+//        boolean f = false;
+        Boolean f = false;
+        String s4 = (String) f;
     }
 }
